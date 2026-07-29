@@ -1,0 +1,14 @@
+{
+  "name": "lumora-dental",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "node -e \"fs.cpSync('assets', 'public/assets', {recursive: true})\" && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
