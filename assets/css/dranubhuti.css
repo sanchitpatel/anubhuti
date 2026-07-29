@@ -8972,14 +8972,10 @@ figure {
   }
 
   .hero-image_wrap {
-    background-image: url("../img/69f5e19b42acf37c98906a5c_home-hero-mobile-image.webp");
+    background-image: none;
     background-position: 100% 0;
     background-repeat: no-repeat;
     background-size: contain;
-  }
-
-  .home-hero_image.hide-on-mobile {
-    display: none;
   }
 
   .footer-bottom_right {
