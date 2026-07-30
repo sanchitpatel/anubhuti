@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     open: true,
     host: true,
-    allowedHosts: ["creation-roman-released-plates.trycloudflare.com"],
+    allowedHosts: ["relief-chester-jaguar-leaving.trycloudflare.com"],
   },
   build: {
     rollupOptions: {

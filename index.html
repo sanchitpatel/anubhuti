@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>Dr. Anubhuti's Advanced Dental Care | Modern, Gentle Dentistry</title>
     <meta
-               content="Dr. Anubhuti's Advanced Dental Care is a modern dental clinic offering gentle, expert care &#x2014; from preventive checkups and cosmetic dentistry to restorative treatments and orthodontics. Book your visit today."
+        content="Dr. Anubhuti's Advanced Dental Care is a modern dental clinic offering gentle, expert care &#x2014; from preventive checkups and cosmetic dentistry to restorative treatments and orthodontics. Book your visit today."
         name="description" />
     <meta content="Dr. Anubhuti's Advanced Dental Care | Modern, Gentle Dentistry" property="og:title" />
     <meta
@@ -22,283 +22,334 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="assets/css/dranubhuti.css?v=20260614f" rel="stylesheet" type="text/css" />
     <style>
-    /* Guaranteed 100% full-width inputs & visible bright red error messages */
-    .lead-form_card {
-      box-sizing: border-box !important;
-      width: 100% !important;
-      max-width: 430px !important;
-    }
-    .lead-form {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .lead-form_group {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 4px !important;
-      width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .lead-form_input {
-      width: 100% !important;
-      max-width: 100% !important;
-      min-width: 100% !important;
-      display: block !important;
-      box-sizing: border-box !important;
-      height: 50px !important;
-      border: 1.5px solid #e4e8ea !important;
-      border-radius: 12px !important;
-      padding: 0 16px !important;
-      font-family: inherit !important;
-      font-size: 15px !important;
-      color: #011f23 !important;
-      outline: none !important;
-      background: #fafcfc !important;
-      transition: border-color .2s, background .2s !important;
-    }
-    .lead-form_input:focus {
-      border-color: #24a3b1 !important;
-      background: #ffffff !important;
-    }
-    .lead-form_input.is-invalid {
-      border: 2px solid #e53e3e !important;
-      background-color: #fff5f5 !important;
-      color: #9b2c2c !important;
-    }
-    .lead-form_error {
-      color: #e53e3e !important;
-      font-size: 13px !important;
-      line-height: 1.3 !important;
-      padding-left: 4px !important;
-      margin-top: 2px !important;
-      margin-bottom: 2px !important;
-      font-weight: 700 !important;
-    }
-    .lead-form_btn {
-      width: 100% !important;
-      box-sizing: border-box !important;
-      height: 52px !important;
-      border: none !important;
-      border-radius: 999px !important;
-      background: #011f23 !important;
-      color: #ffffff !important;
-      font-family: inherit !important;
-      font-size: 15px !important;
-      font-weight: 600 !important;
-      cursor: pointer !important;
-    }
-    /* Hide booking form card by default on all screen sizes */
-    .lead-form_card {
-      max-height: 0 !important;
-      overflow: hidden !important;
-      opacity: 0 !important;
-      margin-top: 0 !important;
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-      border: none !important;
-      box-shadow: none !important;
-      pointer-events: none !important;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    }
-    .lead-form_card.is-visible {
-      max-height: 1000px !important;
-      opacity: 1 !important;
-      margin-top: 24px !important;
-      padding-top: 24px !important;
-      padding-bottom: 20px !important;
-      box-shadow: 0 28px 70px rgba(2, 47, 52, .30) !important;
-      pointer-events: auto !important;
-    }
-    /* Accordion Dropdown info-strip styles */
-    .our-info_list {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      grid-column-gap: 0px !important;
-      transition: grid-column-gap 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      background: transparent !important;
-      border: none !important;
-      padding: 0 !important;
-      width: 100% !important;
-    }
-    
-    .our-info_item {
-      background: rgba(2, 47, 52, 0.80) !important;
-      backdrop-filter: blur(16px) !important;
-      -webkit-backdrop-filter: blur(16px) !important;
-      border: 1px solid rgba(255, 255, 255, 0.12) !important;
-      padding: 14px 20px !important;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      cursor: pointer !important;
-      display: flex !important;
-      flex-direction: column !important;
-      overflow: hidden !important;
-    }
-    
-    /* Joined state border-radii */
-    .our-info_list:not(.has-expanded) .our-info_item:first-child {
-      border-radius: 12px 0 0 12px !important;
-      border-right: none !important;
-    }
-    .our-info_list:not(.has-expanded) .our-info_item:last-child {
-      border-radius: 0 12px 12px 0 !important;
-    }
-    
-    /* Expanded state styles */
-    .our-info_list.has-expanded {
-      grid-column-gap: 16px !important;
-    }
-    .our-info_list.has-expanded .our-info_item {
-      border-radius: 12px !important;
-      border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
-    }
-    
-    /* Clickable Header */
-    .our-info_item-header {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-      width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-    .our-info_header-left {
-      display: flex !important;
-      align-items: center !important;
-      gap: 10px !important;
-    }
-    .our-info_icon-svg {
-      color: var(--color--white) !important;
-      width: 20px !important;
-      height: 20px !important;
-      flex-shrink: 0 !important;
-    }
-    .our-info_title {
-      font-size: 15px !important;
-      font-weight: 500 !important;
-      color: var(--color--white) !important;
-      margin: 0 !important;
-      font-family: inherit !important;
-    }
-    
-    /* Arrow Rotation */
-    .our-info_arrow {
-      color: rgba(255, 255, 255, 0.6) !important;
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-      flex-shrink: 0 !important;
-    }
-    .our-info_item.is-expanded .our-info_arrow {
-      transform: rotate(90deg) !important;
-      color: var(--color--white) !important;
-    }
-    
-    /* Collapsible Body Wrapper using grid-template-rows trick */
-    .our-info_content-wrapper {
-      display: grid !important;
-      grid-template-rows: 0fr !important;
-      transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease !important;
-      opacity: 0 !important;
-      pointer-events: none !important;
-    }
-    .our-info_item.is-expanded .our-info_content-wrapper {
-      grid-template-rows: 1fr !important;
-      opacity: 1 !important;
-      pointer-events: auto !important;
-    }
-    .our-info_content-inner {
-      min-height: 0 !important;
-      overflow: hidden !important;
-    }
-    
-    /* Divider line inside expanded card */
-    .our-info_divider {
-      height: 1px !important;
-      background: rgba(255, 255, 255, 0.15) !important;
-      width: 100% !important;
-      margin: 12px 0 !important;
-    }
-    
-    /* Timings layout with clock icon */
-    .our-info_schedule-row {
-      display: flex !important;
-      align-items: flex-start !important;
-      gap: 10px !important;
-    }
-    .our-info_icon-clock {
-      color: rgba(255, 255, 255, 0.7) !important;
-      margin-top: 2px !important;
-      flex-shrink: 0 !important;
-    }
-    .our-info_schedule-list {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 8px !important;
-      width: 100% !important;
-    }
-    .our-info_block {
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      width: 100% !important;
-      gap: 12px !important;
-    }
-    .our-info_item-para {
-      font-size: 13px !important;
-      line-height: 1.4 !important;
-      color: rgba(255, 255, 255, 0.8) !important;
-      margin: 0 !important;
-    }
-    .our-info_item-para.font-semibold {
-      font-weight: 500 !important;
-      color: var(--color--white) !important;
-    }
-    .our-info_item-link {
-      text-decoration: none !important;
-      transition: opacity 0.2s ease !important;
-      color: var(--color--white) !important;
-    }
-    .our-info_item-link:hover {
-      opacity: 0.8 !important;
-    }
-    /* === Absolute bottom positioning for info cards — expand upward === */
-    .section_hero.is-home-hero {
-      position: relative !important;
-      min-height: 100vh !important;
-      /* No extra padding-bottom — cards are absolutely positioned at bottom edge */
-      overflow: visible !important;
-    }
-    .our-info_wrap {
-      position: absolute !important;
-      bottom: 0 !important;
-      left: 0 !important;
-      right: 0 !important;
-      width: 100% !important;
-      z-index: 10 !important;
-    }
-    /* Remove margins since absolutely positioned */
-    .our-info_wrap > * {
-      margin-top: 0 !important;
-    }
-    /* Reverse flex so header (clickable row) stays at bottom
+        /* Guaranteed 100% full-width inputs & visible bright red error messages */
+        .lead-form_card {
+            box-sizing: border-box !important;
+            width: 100% !important;
+            max-width: 340px !important;
+        }
+
+        .lead-form {
+            display: flex;
+            flex-direction: column; 
+            gap: 8px;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .lead-form_group {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 4px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+
+        .lead-form_input {
+            width: 100% !important;
+            max-width: 100% !important;
+            min-width: 100% !important;
+            display: block !important;
+            box-sizing: border-box !important;
+            height: 40px !important;
+            border: 1.5px solid #e4e8ea !important;
+            border-radius: 10px !important;
+            padding: 0 14px !important;
+            font-family: inherit !important;
+            font-size: 14px !important;
+            color: #011f23 !important;
+            outline: none !important;
+            background: #fafcfc !important;
+            transition: border-color .2s, background .2s !important;
+        }
+
+        .lead-form_input:focus {
+            border-color: #24a3b1 !important;
+            background: #ffffff !important;
+        }
+
+        .lead-form_input.is-invalid {
+            border: 2px solid #e53e3e !important;
+            background-color: #fff5f5 !important;
+            color: #9b2c2c !important;
+        }
+
+        .lead-form_error {
+            color: #e53e3e !important;
+            font-size: 13px !important;
+            line-height: 1.3 !important;
+            padding-left: 4px !important;
+            margin-top: 2px !important;
+            margin-bottom: 2px !important;
+            font-weight: 700 !important;
+        }
+
+        .lead-form_btn {
+            width: 100% !important;
+            box-sizing: border-box !important;
+            height: 44px !important;
+            border: none !important;
+            border-radius: 999px !important;
+            background: #011f23 !important;
+            color: #ffffff !important;
+            font-family: inherit !important;
+            font-size: 14px !important;
+            font-weight: 600 !important;
+            cursor: pointer !important;
+        }
+
+        /* Hide booking form card by default on all screen sizes */
+        .lead-form_card {
+            max-height: 0 !important;
+            overflow: hidden !important;
+            opacity: 0 !important;
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            border: none !important;
+            box-shadow: none !important;
+            pointer-events: none !important;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .lead-form_card.is-visible {
+            max-height: 600px !important;
+            opacity: 1 !important;
+            margin-top: 16px !important;
+            padding-top: 16px !important;
+            padding-bottom: 16px !important;
+            box-shadow: 0 20px 50px rgba(2, 47, 52, .25) !important;
+            pointer-events: auto !important;
+        }
+
+        /* Accordion Dropdown info-strip styles */
+        .our-info_list {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            grid-column-gap: 0px !important;
+            transition: grid-column-gap 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            background: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
+
+        .our-info_item {
+            background: rgba(2, 47, 52, 0.80) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border: 1px solid rgba(255, 255, 255, 0.12) !important;
+            padding: 14px 20px !important;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            cursor: pointer !important;
+            display: flex !important;
+            flex-direction: column !important;
+            overflow: hidden !important;
+        }
+
+        /* Joined state border-radii */
+        .our-info_list:not(.has-expanded) .our-info_item:first-child {
+            border-radius: 12px 0 0 12px !important;
+            border-right: none !important;
+        }
+
+        .our-info_list:not(.has-expanded) .our-info_item:last-child {
+            border-radius: 0 12px 12px 0 !important;
+        }
+
+        /* Expanded state styles */
+        .our-info_list.has-expanded {
+            grid-column-gap: 16px !important;
+        }
+
+        .our-info_list.has-expanded .our-info_item {
+            border-radius: 12px !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.15) !important;
+        }
+
+        /* Clickable Header */
+        .our-info_item-header {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .our-info_header-left {
+            display: flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+        }
+
+        .our-info_icon-svg {
+            color: var(--color--white) !important;
+            width: 20px !important;
+            height: 20px !important;
+            flex-shrink: 0 !important;
+        }
+
+        .our-info_title {
+            font-size: 15px !important;
+            font-weight: 500 !important;
+            color: var(--color--white) !important;
+            margin: 0 !important;
+            font-family: inherit !important;
+        }
+
+        /* Arrow Rotation */
+        .our-info_arrow {
+            color: rgba(255, 255, 255, 0.6) !important;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            flex-shrink: 0 !important;
+        }
+
+        .our-info_item.is-expanded .our-info_arrow {
+            transform: rotate(90deg) !important;
+            color: var(--color--white) !important;
+        }
+
+        /* Collapsible Body Wrapper using grid-template-rows trick */
+        .our-info_content-wrapper {
+            display: grid !important;
+            grid-template-rows: 0fr !important;
+            transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
+
+        .our-info_item.is-expanded .our-info_content-wrapper {
+            grid-template-rows: 1fr !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        .our-info_content-inner {
+            min-height: 0 !important;
+            overflow: hidden !important;
+        }
+
+        /* Divider line inside expanded card */
+        .our-info_divider {
+            height: 1px !important;
+            background: rgba(255, 255, 255, 0.15) !important;
+            width: 100% !important;
+            margin: 12px 0 !important;
+        }
+
+        /* Timings layout with clock icon */
+        .our-info_schedule-row {
+            display: flex !important;
+            align-items: flex-start !important;
+            gap: 10px !important;
+        }
+
+        .our-info_icon-clock {
+            color: rgba(255, 255, 255, 0.7) !important;
+            margin-top: 2px !important;
+            flex-shrink: 0 !important;
+        }
+
+        .our-info_schedule-list {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 8px !important;
+            width: 100% !important;
+        }
+
+        .our-info_block {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            gap: 12px !important;
+        }
+
+        .our-info_item-para {
+            font-size: 13px !important;
+            line-height: 1.4 !important;
+            color: rgba(255, 255, 255, 0.8) !important;
+            margin: 0 !important;
+        }
+
+        .our-info_item-para.font-semibold {
+            font-weight: 500 !important;
+            color: var(--color--white) !important;
+        }
+
+        .our-info_item-link {
+            text-decoration: none !important;
+            transition: opacity 0.2s ease !important;
+            color: var(--color--white) !important;
+        }
+
+        .our-info_item-link:hover {
+            opacity: 0.8 !important;
+        }
+
+        /* === Absolute bottom positioning for info cards — expand upward === */
+        .section_hero.is-home-hero {
+            position: relative !important;
+            min-height: 100vh !important;
+            /* No extra padding-bottom — cards are absolutely positioned at bottom edge */
+            overflow: visible !important;
+        }
+
+        .our-info_wrap {
+            position: absolute !important;
+            bottom: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            width: 100% !important;
+            z-index: 10 !important;
+        }
+
+        /* Remove margins since absolutely positioned */
+        .our-info_wrap>* {
+            margin-top: 0 !important;
+        }
+
+        /* Reverse flex so header (clickable row) stays at bottom
        and content wrapper sits above it — upward expansion */
-    .our-info_item {
-      flex-direction: column-reverse !important;
-    }
-    /* Content wrapper goes above the header visually */
-    .our-info_item .our-info_content-wrapper {
-      order: -1 !important;
-    }
-    /* Arrow: chevron rotates to point down when expanded (content is above) */
-    .our-info_item.is-expanded .our-info_arrow {
-      transform: rotate(90deg) !important;
-    }
-    @media (min-width: 992px) {
-      .our-info_wrap {
-        margin-top: 0 !important;
-      }
-    }
+        .our-info_item {
+            flex-direction: column-reverse !important;
+        }
+
+        /* Content wrapper goes above the header visually */
+        .our-info_item .our-info_content-wrapper {
+            order: -1 !important;
+        }
+
+        /* Arrow: chevron rotates to point down when expanded (content is above) */
+        .our-info_item.is-expanded .our-info_arrow {
+            transform: rotate(90deg) !important;
+        }
+
+        @media (min-width: 992px) {
+            .our-info_wrap {
+                margin-top: 0 !important;
+            }
+        }
+
+        /* Mobile: expand downward so cards don't overlap "Book a visit" card */
+        @media (max-width: 767px) {
+            .section_hero.is-home-hero {
+                overflow: visible !important;
+            }
+
+            .our-info_item {
+                flex-direction: column !important;
+            }
+
+            .our-info_item .our-info_content-wrapper {
+                order: 0 !important;
+            }
+
+            .our-info_item.is-expanded .our-info_arrow {
+                transform: rotate(-90deg) !important;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" />
@@ -331,7 +382,8 @@
             data-easing="ease" data-easing2="ease" role="banner" class="navbar_wrap w-nav">
             <div class="navbar_container">
                 <a href="index.html" aria-current="page" class="navbar_logo w-nav-brand w--current">
-                    <img loading="eager" src="assets/img/dranubhuti-logo-dark.svg" alt="Dr. Anubhuti's logo" class="logo_image" />
+                    <img loading="eager" src="assets/img/dranubhuti-logo-dark.svg" alt="Dr. Anubhuti's logo"
+                        class="logo_image" />
                 </a>
                 <div class="navbar-content_wrap">
                     <nav role="navigation" class="navbar_menu w-nav-menu">
@@ -569,16 +621,25 @@
                                     </div>
                                     <form class="lead-form" onsubmit="return handleLeadSubmit(event)" novalidate>
                                         <div class="lead-form_group">
-                                            <input class="lead-form_input" type="text" name="name" placeholder="Your full name" required="" oninput="filterNameInput(this)">
-                                            <div class="lead-form_error" id="err-name" style="display:none;">Please enter a valid name (letters only).</div>
+                                            <input class="lead-form_input" type="text" name="name"
+                                                placeholder="Your full name" required=""
+                                                oninput="filterNameInput(this)">
+                                            <div class="lead-form_error" id="err-name" style="display:none;">Please
+                                                enter a valid name (letters only).</div>
                                         </div>
                                         <div class="lead-form_group">
-                                            <input class="lead-form_input" type="tel" name="phone" placeholder="Phone number (10 digits)" required="" maxlength="10" oninput="filterPhoneInput(this)">
-                                            <div class="lead-form_error" id="err-phone" style="display:none;">Please enter a valid 10-digit phone number.</div>
+                                            <input class="lead-form_input" type="tel" name="phone"
+                                                placeholder="Phone number (10 digits)" required="" maxlength="10"
+                                                oninput="filterPhoneInput(this)">
+                                            <div class="lead-form_error" id="err-phone" style="display:none;">Please
+                                                enter a valid 10-digit phone number.</div>
                                         </div>
                                         <div class="lead-form_group">
-                                            <input class="lead-form_input" type="email" name="email" placeholder="Your email address" required="" oninput="validateLeadEmail(this)">
-                                            <div class="lead-form_error" id="err-email" style="display:none;">Please enter a valid email address.</div>
+                                            <input class="lead-form_input" type="email" name="email"
+                                                placeholder="Your email address" required=""
+                                                oninput="validateLeadEmail(this)">
+                                            <div class="lead-form_error" id="err-email" style="display:none;">Please
+                                                enter a valid email address.</div>
                                         </div>
                                         <button class="lead-form_btn" type="submit">Request a callback</button>
                                         <div class="lead-form_note">No spam. A real person calls you back, fast.</div>
@@ -607,7 +668,10 @@
                                     <div class="our-info_item" id="info-appointment">
                                         <div class="our-info_item-header">
                                             <div class="our-info_header-left">
-                                                <svg class="our-info_icon-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                <svg class="our-info_icon-svg" xmlns="http://www.w3.org/2000/svg"
+                                                    width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
                                                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
                                                     <line x1="16" y1="2" x2="16" y2="6"></line>
                                                     <line x1="8" y1="2" x2="8" y2="6"></line>
@@ -615,18 +679,24 @@
                                                 </svg>
                                                 <h2 class="our-info_title">Get Appointment</h2>
                                             </div>
-                                            <svg class="our-info_arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <svg class="our-info_arrow" xmlns="http://www.w3.org/2000/svg" width="18"
+                                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="9 18 15 12 9 6"></polyline>
                                             </svg>
                                         </div>
                                         <div class="our-info_content-wrapper">
                                             <div class="our-info_content-inner">
-                                                <p class="our-info_item-para is-light" style="margin-top: 12px; margin-bottom: 16px;">
+                                                <p class="our-info_item-para is-light"
+                                                    style="margin-top: 12px; margin-bottom: 16px;">
                                                     Ready for a healthier smile? Book your visit today.
                                                 </p>
                                                 <div class="our-info_divider"></div>
                                                 <div class="our-info_schedule-row">
-                                                    <svg class="our-info_icon-clock" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                                    <svg class="our-info_icon-clock" xmlns="http://www.w3.org/2000/svg"
+                                                        width="18" height="18" viewBox="0 0 24 24" fill="none"
+                                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round">
                                                         <circle cx="12" cy="12" r="10"></circle>
                                                         <polyline points="12 6 12 12 16 14"></polyline>
                                                     </svg>
@@ -647,22 +717,32 @@
                                     <div class="our-info_item" id="info-emergency">
                                         <div class="our-info_item-header">
                                             <div class="our-info_header-left">
-                                                <svg class="our-info_icon-svg" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                                <svg class="our-info_icon-svg" xmlns="http://www.w3.org/2000/svg"
+                                                    width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round">
+                                                    <path
+                                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                                    </path>
                                                 </svg>
                                                 <h2 class="our-info_title">Emergency Contact</h2>
                                             </div>
-                                            <svg class="our-info_arrow" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                            <svg class="our-info_arrow" xmlns="http://www.w3.org/2000/svg" width="18"
+                                                height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                                                 <polyline points="9 18 15 12 9 6"></polyline>
                                             </svg>
                                         </div>
                                         <div class="our-info_content-wrapper">
                                             <div class="our-info_content-inner">
-                                                <div class="our-info_divider" style="margin-top: 12px; margin-bottom: 16px;"></div>
-                                                <a href="tel:+918076601314" class="our-info_item-link w-inline-block" style="margin-bottom: 12px; display: block;">
+                                                <div class="our-info_divider"
+                                                    style="margin-top: 12px; margin-bottom: 16px;"></div>
+                                                <a href="tel:+918076601314" class="our-info_item-link w-inline-block"
+                                                    style="margin-bottom: 12px; display: block;">
                                                     <div class="our-info_item-para">Call : +91 8076601314</div>
                                                 </a>
-                                                <a href="mailto:dr.anubhutig@gmail.com?subject=contact" class="our-info_item-link w-inline-block" style="display: block;">
+                                                <a href="mailto:dr.anubhutig@gmail.com?subject=contact"
+                                                    class="our-info_item-link w-inline-block" style="display: block;">
                                                     <div class="our-info_item-para">Email: dr.anubhutig@gmail.com</div>
                                                 </a>
                                             </div>
@@ -681,7 +761,8 @@
                         class="home-hero_image hero-carousel-img is-active" />
                     <img src="assets/img/clinic-interior.jpg" loading="lazy" alt="Dr. Anubhuti Gupta Clinic Interior"
                         class="home-hero_image hero-carousel-img" />
-                    <img src="assets/img/clinic-award.jpg" loading="lazy" alt="Dr. Anubhuti Gupta Certificate of Appreciation"
+                    <img src="assets/img/clinic-award.jpg" loading="lazy"
+                        alt="Dr. Anubhuti Gupta Certificate of Appreciation"
                         class="home-hero_image hero-carousel-img" />
                 </div>
             </header>
@@ -1085,7 +1166,8 @@
                                             </div>
                                             <p data-w-id="6dfeacc9-c462-98c5-51c9-b2e521b474e8"
                                                 style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
-                                                At Dr. Anubhuti's Advanced Dental Care, we combine expertise, compassion, and modern technology to
+                                                At Dr. Anubhuti's Advanced Dental Care, we combine expertise,
+                                                compassion, and modern technology to
                                                 create a dental experience that patients truly value.</p>
                                         </div>
                                         <div id="w-node-_17c80cc5-2289-6c10-a51b-0f6f1a06e885-965ec33c"
@@ -1825,16 +1907,16 @@
                                                     <div class="image-animation-scale">
                                                         <img src="assets/img/gen_team-image-5.jpg" loading="lazy"
                                                             data-w-id="b31b0ed0-2f34-bf61-f35a-29f8c9197fdb"
-                                                            alt="Dr. Rishi" sizes="100vw"
+                                                            alt="Dr. Anubhuti Gupta ( B.D.S, M.D.S )" sizes="100vw"
                                                             srcset="assets/img/gen_team-image-5.jpg 500w, assets/img/gen_team-image-5.jpg 742w"
-                                                            class="team_image" />
+                                                            class="team_image" style="object-position: center top;" />
                                                     </div>
                                                 </div>
                                             </a>
                                             <div class="team-item_content">
                                                 <a aria-label="doctor&#x27;s profile" href="about.html"
                                                     class="team-menmber_wrap w-inline-block">
-                                                    <h3 class="team-menmber_name">Dr. Rishi</h3>
+                                                    <h3 class="team-menmber_name">Dr. Anubhuti Gupta ( B.D.S, M.D.S )</h3>
                                                 </a>
                                                 <div class="team-menuber_info">
                                                     <p class="team-menuber_designation">Pediatric Dentist</p>
@@ -1990,7 +2072,8 @@
                                 <div data-w-id="171cabe9-c174-cdd1-e2ad-0a13d16a9e7c"
                                     style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                                     class="home-value_header-para">
-                                    <p class="body-text-18px">At Dr. Anubhuti's Advanced Dental Care, we combine expertise, compassion, and modern
+                                    <p class="body-text-18px">At Dr. Anubhuti's Advanced Dental Care, we combine
+                                        expertise, compassion, and modern
                                         technology to create a dental experience that patients truly value.</p>
                                 </div>
                             </div>
@@ -2170,7 +2253,8 @@
                                                 </div>
                                                 <div class="testimonial-slider_quotes-wrap">
                                                     <p class="testimonial-slider_quotes">“I’ve always been nervous about
-                                                        visiting the dentist, but Dr. Anubhuti's Advanced Dental Care changed everything. The staff
+                                                        visiting the dentist, but Dr. Anubhuti's Advanced Dental Care
+                                                        changed everything. The staff
                                                         is warm, and the care is exceptional. I finally enjoy smiling
                                                         again.”</p>
                                                 </div>
@@ -3062,18 +3146,18 @@
         }
 
         // "Book Appointment" click handler to slide down form card
-        (function() {
+        (function () {
             function initBooking() {
                 var links = document.querySelectorAll('a[href="#book-visit"]');
                 var card = document.getElementById('book-visit');
                 if (!card) return;
 
-                links.forEach(function(link) {
-                    link.addEventListener('click', function(e) {
+                links.forEach(function (link) {
+                    link.addEventListener('click', function (e) {
                         e.preventDefault();
                         var isVisible = card.classList.toggle('is-visible');
                         if (isVisible) {
-                            setTimeout(function() {
+                            setTimeout(function () {
                                 card.scrollIntoView({ behavior: 'smooth', block: 'center' });
                             }, 50);
                         }
@@ -3107,34 +3191,34 @@
 
     <script>
         // Interactive Info Cards accordion logic
-        (function() {
+        (function () {
             function initInfoCards() {
                 var list = document.querySelector('.our-info_list');
                 var items = document.querySelectorAll('.our-info_item');
                 if (!list || items.length === 0) return;
 
-                items.forEach(function(item) {
-                    item.addEventListener('click', function(e) {
+                items.forEach(function (item) {
+                    item.addEventListener('click', function (e) {
                         // If user clicks on an interactive link/anchor, don't toggle accordion
                         if (e.target.closest('a') || e.target.closest('button')) {
                             return;
                         }
-                        
+
                         // Check if they are currently expanded (any of them)
-                        var anyExpanded = Array.prototype.some.call(items, function(el) {
+                        var anyExpanded = Array.prototype.some.call(items, function (el) {
                             return el.classList.contains('is-expanded');
                         });
-                        
+
                         var targetState = !anyExpanded;
-                        
-                        items.forEach(function(el) {
+
+                        items.forEach(function (el) {
                             if (targetState) {
                                 el.classList.add('is-expanded');
                             } else {
                                 el.classList.remove('is-expanded');
                             }
                         });
-                        
+
                         if (targetState) {
                             list.classList.add('has-expanded');
                         } else {
@@ -3169,6 +3253,31 @@
                 if (im.complete && im.naturalWidth === 0 && !im.dataset.fbk) { im.dataset.fbk = '1'; im.src = ph(im.alt); }
             }
             document.querySelectorAll('img').forEach(bind);
+        })();
+    </script>
+    <script>
+        /* Toggle "Book a visit" card when clicking Get Appointment / Book Appointment buttons */
+        (function () {
+            function initBookingToggle() {
+                var card = document.getElementById('book-visit');
+                if (!card) return;
+                /* Select both buttons by their unique class variants */
+                var btns = document.querySelectorAll(
+                    '.w-variant-fb89ee7f-8db1-8e54-55c6-075f0151c951,' +
+                    '.w-variant-62db4792-8717-dbe8-e811-0d36eb02f9ec'
+                );
+                btns.forEach(function (btn) {
+                    btn.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        card.classList.toggle('is-visible');
+                    });
+                });
+            }
+            if (document.readyState !== 'loading') {
+                initBookingToggle();
+            } else {
+                document.addEventListener('DOMContentLoaded', initBookingToggle);
+            }
         })();
     </script>
 </body>
