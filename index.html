@@ -321,6 +321,12 @@
             right: 0 !important;
             width: 100% !important;
             z-index: 10 !important;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+        }
+
+        .our-info_wrap.is-pushed-down,
+        .section_hero.is-home-hero:has(.lead-form_card.is-visible) .our-info_wrap {
+            transform: translateY(73px) !important;
         }
 
         /* Remove margins since absolutely positioned */
@@ -660,7 +666,6 @@
                                                 enter a valid email address.</div>
                                         </div>
                                         <button class="lead-form_btn" type="submit">Request a callback</button>
-                                        <div class="lead-form_note">No spam. A real person calls you back, fast.</div>
                                     </form>
                                     <div class="lead-form_success" style="display:none">
                                         <div class="lead-form_title">Thanks! You're all set.</div>
@@ -3245,6 +3250,13 @@
 
                         if (targetState) {
                             list.classList.add('has-expanded');
+                            // Automatically close the booking form if open
+                            var card = document.getElementById('book-visit');
+                            var infoWrap = document.querySelector('.our-info_wrap');
+                            if (card && card.classList.contains('is-visible')) {
+                                card.classList.remove('is-visible');
+                                if (infoWrap) infoWrap.classList.remove('is-pushed-down');
+                            }
                         } else {
                             list.classList.remove('has-expanded');
                         }
@@ -3293,7 +3305,22 @@
                 btns.forEach(function (btn) {
                     btn.addEventListener('click', function (e) {
                         e.preventDefault();
-                        card.classList.toggle('is-visible');
+                        var isOpen = card.classList.toggle('is-visible');
+                        var infoWrap = document.querySelector('.our-info_wrap');
+                        if (infoWrap) {
+                            if (isOpen) {
+                                infoWrap.classList.add('is-pushed-down');
+                                // Automatically collapse any open info-strip dropdown cards
+                                var infoItems = document.querySelectorAll('.our-info_item');
+                                infoItems.forEach(function (item) {
+                                    item.classList.remove('is-expanded');
+                                });
+                                var infoList = document.querySelector('.our-info_list');
+                                if (infoList) infoList.classList.remove('has-expanded');
+                            } else {
+                                infoWrap.classList.remove('is-pushed-down');
+                            }
+                        }
                     });
                 });
             }
