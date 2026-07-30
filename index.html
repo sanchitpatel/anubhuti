@@ -22,6 +22,19 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <link href="assets/css/dranubhuti.css?v=20260614f" rel="stylesheet" type="text/css" />
     <style>
+        /* Increase Dr. Anubhuti top-nav logo size for Desktop */
+        .navbar_logo {
+            max-width: 240px !important;
+            width: 240px !important;
+        }
+
+        .logo_image {
+            max-height: 60px !important;
+            height: 60px !important;
+            width: auto !important;
+            object-fit: contain !important;
+        }
+
         /* Guaranteed 100% full-width inputs & visible bright red error messages */
         .lead-form_card {
             box-sizing: border-box !important;
@@ -349,6 +362,11 @@
             .home-hero_image[src*="clinic-building"] {
                 object-position: 50% 20% !important;
             }
+            
+            .home-hero_para {
+                font-size: 15px !important;
+                line-height: 1.45 !important;
+            }
 
             /* Mobile Info-Strip 2-Column Floating Cards matching Image 1 */
             .our-info_wrap {
@@ -476,6 +494,7 @@
                 align-items: center !important;
                 justify-content: center !important;
                 width: 100% !important;
+                margin-top: 80px !important;
             }
 
             .lead-form_card {
@@ -492,6 +511,17 @@
             /* Hide red error instruction text lines on mobile view only */
             .lead-form_error {
                 display: none !important;
+            }
+
+            /* Increase Dr. Anubhuti top-nav logo size for Mobile */
+            .navbar_logo {
+                max-width: 240px !important;
+                width: 240px !important;
+            }
+
+            .logo_image {
+                max-height: 62px !important;
+                height: 62px !important;
             }
         }
 
@@ -765,12 +795,12 @@
                                         data-wf-target="[[[&quot;6989a716ebe888bb965ec33c&quot;,&quot;15f4ab3a-4cb8-bb3e-3e46-bdbd57d995b3&quot;],[]]]"
                                         data-w-id="15f4ab3a-4cb8-bb3e-3e46-bdbd57d995b3"
                                         style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                                        class="hero-text-split">Trusted Dental Care for Every Generation</h1>
+                                        class="hero-text-split">Smile With Confidence Again</h1>
                                 </div>
                                 <div class="margin-bottom margin-32px">
                                     <p data-w-id="59cae1c0-9ae0-0825-f9e9-7645d908b0e0" style="opacity:0"
-                                        class="home-hero_para">We combine modern technology with heartfelt service to
-                                        ensure every generation.</p>
+                                        class="home-hero_para">Experience comfortable, advanced dental care crafted for
+                                        every member of your family.</p>
                                 </div>
                                 <div data-w-id="123dbd0a-737f-01ae-eb77-4a2f18726493" style="opacity:0"
                                     class="button-container">
@@ -3378,7 +3408,7 @@
                         if (isVisible) {
                             if (list) list.classList.remove('has-expanded');
                             items.forEach(function (el) { el.classList.remove('is-expanded'); });
-                        } else if (window.innerWidth <= 767 && list && items.length) {
+                        } else if (list && items.length) {
                             list.classList.add('has-expanded');
                             items.forEach(function (el) { el.classList.add('is-expanded'); });
                         }
@@ -3414,19 +3444,17 @@
     <script>
         // Interactive Info Cards accordion logic
         (function () {
-            function updateMobileInfoCardsState() {
-                if (window.innerWidth <= 767) {
-                    var list = document.querySelector('.our-info_list');
-                    var items = document.querySelectorAll('.our-info_item');
-                    var card = document.getElementById('book-visit');
-                    var isFormOpen = card && card.classList.contains('is-visible');
+            function setInfoCardsDefaultOpen() {
+                var list = document.querySelector('.our-info_list');
+                var items = document.querySelectorAll('.our-info_item');
+                var card = document.getElementById('book-visit');
+                var isFormOpen = card && card.classList.contains('is-visible');
 
-                    if (!isFormOpen && list && items.length) {
-                        list.classList.add('has-expanded');
-                        items.forEach(function (el) {
-                            el.classList.add('is-expanded');
-                        });
-                    }
+                if (!isFormOpen && list && items.length) {
+                    list.classList.add('has-expanded');
+                    items.forEach(function (el) {
+                        el.classList.add('is-expanded');
+                    });
                 }
             }
 
@@ -3435,8 +3463,8 @@
                 var items = document.querySelectorAll('.our-info_item');
                 if (!list || items.length === 0) return;
 
-                updateMobileInfoCardsState();
-                window.addEventListener('resize', updateMobileInfoCardsState);
+                setInfoCardsDefaultOpen();
+                window.addEventListener('resize', setInfoCardsDefaultOpen);
 
                 items.forEach(function (item) {
                     item.addEventListener('click', function (e) {
