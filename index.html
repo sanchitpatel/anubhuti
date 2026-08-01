@@ -570,6 +570,254 @@
                 transform: rotate(-90deg) !important;
             }
         }
+
+        .footer_brand {
+            max-width: 340px !important;
+        }
+
+        .footer-contact_wrap {
+            grid-row-gap: 8px !important;
+        }
+
+        .footer-contact_link {
+            font-size: clamp(16px, 1.25vw, 20px) !important;
+            line-height: 1.3 !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        /* ==========================================================================
+           Services Section Responsive Optimization for 15.6" Laptop Displays & Desktops
+           Ensures all 4 service templates fit completely within viewport height & width
+           without vertical clipping or half-cut cards while scrolling
+           ========================================================================== */
+        @media screen and (min-width: 768px) {
+
+            /* Sticky camera alignment - vertically centers section in viewport */
+            .service_sticky-camera {
+                top: max(15px, calc((100vh - 560px) / 2)) !important;
+                justify-content: center !important;
+            }
+
+            /* Compact margin above header inside services sticky camera */
+            .service_sticky-camera .margin-bottom.margin-56px {
+                margin-bottom: 24px !important;
+            }
+
+            .home-service_header {
+                margin-bottom: 0 !important;
+            }
+
+            .home-service_header-content h2 {
+                font-size: clamp(26px, 2.3vw, 36px) !important;
+                line-height: 1.25 !important;
+            }
+
+            .home-service_header-content p {
+                font-size: 15px !important;
+                line-height: 1.4 !important;
+            }
+
+            /* Horizontal Card Track & Item Wrapper Width */
+            .service_item-wrap {
+                width: 82cqw !important;
+                max-width: 960px !important;
+            }
+
+            .service_list {
+                grid-column-gap: 28px !important;
+            }
+
+            /* Service Card Layout - Increased vertical height */
+            .service_item {
+                padding: 28px 32px !important;
+                grid-template-columns: 1fr 1.35fr !important;
+                grid-column-gap: 24px !important;
+                grid-row-gap: 20px !important;
+                align-items: center !important;
+                border-radius: 24px !important;
+            }
+
+            .service_content {
+                grid-column-gap: 16px !important;
+                grid-row-gap: 20px !important;
+                justify-content: space-between !important;
+                height: 100% !important;
+            }
+
+            .service-item_info {
+                grid-column-gap: 12px !important;
+                grid-row-gap: 12px !important;
+            }
+
+            .service-item_info-title {
+                font-size: clamp(22px, 1.8vw, 26px) !important;
+            }
+
+            .service-item_info p {
+                font-size: 14px !important;
+                line-height: 1.45 !important;
+            }
+
+            /* Card Right Side Image Showcase Container - Increased height from 260px to 330px */
+            .service-item_showcase {
+                min-height: 330px !important;
+                max-height: 350px !important;
+                height: 330px !important;
+            }
+
+            .service-item_image {
+                border-radius: 18px !important;
+            }
+
+            .service-item_showcase-inner {
+                padding: 18px !important;
+            }
+
+            .service-item_tag-list {
+                grid-column-gap: 10px !important;
+                grid-row-gap: 10px !important;
+            }
+
+            .service-item_tag {
+                padding: 8px 14px !important;
+                font-size: 13px !important;
+            }
+        }
+
+        /* ==========================================================================
+           Services Section Mobile Fix (< 768px)
+           Fixes screen like Image 1 (Header + Cards sticky together) for ALL 4 cards
+           until horizontal scroll finishes
+           ========================================================================== */
+        @media screen and (max-width: 767px) {
+
+            /* Sticky trigger height for mobile horizontal scroll animation */
+            .service_sticky-trigger {
+                height: 250vh !important;
+            }
+
+            /* Sticky camera alignment for mobile - keeps Header + Cards fixed together like Image 1 */
+            .service_sticky-camera {
+                position: sticky !important;
+                top: max(10px, calc((100vh - 580px) / 2)) !important;
+                height: auto !important;
+            }
+
+            /* Disable standalone camera sticking so header stays pinned with cards */
+            .scroll-mobile_camera {
+                position: relative !important;
+                top: auto !important;
+            }
+
+            .scroll-mobile_trigger {
+                height: auto !important;
+                padding-bottom: 0 !important;
+            }
+
+            /* Compact Header spacing on mobile */
+            .service_sticky-camera .margin-bottom.margin-56px {
+                margin-bottom: 12px !important;
+            }
+
+            .home-service_header {
+                margin-bottom: 0 !important;
+            }
+
+            .home-service_header-content h2 {
+                font-size: 20px !important;
+                line-height: 1.25 !important;
+                margin-bottom: 4px !important;
+            }
+
+            .home-service_header-content p {
+                font-size: 12.5px !important;
+                line-height: 1.35 !important;
+            }
+
+            .home-service_button .button_primary {
+                padding: 6px 14px !important;
+                font-size: 12px !important;
+            }
+
+            /* Horizontal Card Track & Item Wrapper Width */
+            .service_item-wrap {
+                width: 86cqw !important;
+            }
+
+            .service_list {
+                grid-column-gap: 16px !important;
+            }
+
+            /* Service Card Dimensions on Mobile */
+            .service_item {
+                padding: 14px 16px !important;
+                grid-template-columns: 1fr !important;
+                grid-row-gap: 10px !important;
+                border-radius: 16px !important;
+            }
+
+            .service_content {
+                grid-column-gap: 8px !important;
+                grid-row-gap: 8px !important;
+            }
+
+            .service-item_info {
+                grid-column-gap: 4px !important;
+                grid-row-gap: 4px !important;
+            }
+
+            .service-item_info-title {
+                font-size: 18px !important;
+            }
+
+            .service-item_info p {
+                font-size: 12.5px !important;
+                line-height: 1.35 !important;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .service-item_button {
+                margin-top: 2px !important;
+            }
+
+            .service-item_button .button_primary {
+                padding: 5px 12px !important;
+                font-size: 11.5px !important;
+            }
+
+            /* Showcase Image Height for Mobile (230px) */
+            .service-item_showcase {
+                min-height: 230px !important;
+                height: 230px !important;
+                max-height: 240px !important;
+            }
+
+            .service-item_image {
+                border-radius: 12px !important;
+            }
+
+            .service-item_showcase-inner {
+                padding: 10px !important;
+            }
+
+            .service-item_tag-list {
+                grid-column-gap: 6px !important;
+                grid-row-gap: 6px !important;
+            }
+
+            .service-item_tag {
+                padding: 5px 10px !important;
+                font-size: 11px !important;
+            }
+
+            .service-tag_icon {
+                width: 12px !important;
+                height: 12px !important;
+            }
+        }
     </style>
     <link href="https://fonts.googleapis.com" rel="preconnect" />
     <link href="https://fonts.gstatic.com" rel="preconnect" />
@@ -702,7 +950,7 @@
                                         &copy; 2026 Dr. Anubhuti's Advanced Dental Care
                                     </p>
                                     <div class="navbar-dropdown_social">
-                                        <a aria-label="social-icon" href="https://www.facebook.com" target="_blank"
+                                        <a aria-label="social-icon" href="https://www.facebook.com/104473525044440" target="_blank"
                                             class="dropdown-social_icon-item w-inline-block">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 24"
                                                 fill="none" class="social_icon is-facebook">
@@ -711,7 +959,7 @@
                                                     fill="currentColor"></path>
                                             </svg>
                                         </a>
-                                        <a aria-label="social-icon" href="https://www.instagram.com" target="_blank"
+                                        <a aria-label="social-icon" href="https://www.instagram.com/dr.anubhutig" target="_blank"
                                             class="dropdown-social_icon-item w-inline-block">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 26 24"
                                                 fill="none">
@@ -2149,13 +2397,13 @@
                                             <div class="team-item_content">
                                                 <a aria-label="doctor&#x27;s profile" href="about.html"
                                                     class="team-menmber_wrap w-inline-block">
-                                                    <h3 class="team-menmber_name">Dr. Anubhuti Gupta ( B.D.S, M.D.S )
+                                                    <h3 class="team-menmber_name">Dr. Anubhuti Gupta
                                                     </h3>
                                                 </a>
                                                 <div class="team-menuber_info">
-                                                    <p class="team-menuber_designation">Pediatric Dentist</p>
+                                                    <p class="team-menuber_designation">B.D.S, M.D.S</p>
                                                     <div class="team-menuber_social">
-                                                        <a aria-label="team social link" href="http://instagram.com/"
+                                                        <a aria-label="team social link" href="http://instagram.com/dr.anubhutig"
                                                             target="_blank"
                                                             class="team-menuber_social-item w-inline-block">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="100%"
@@ -3102,7 +3350,7 @@
                             <div id="w-node-_02084d99-4d3e-67aa-07d3-fc9302298ce0-4af74ce9" class="footer-links-column">
                                 <div class="footer-menu_title">Follow us</div>
                                 <div class="footer-menu_link-wrap is-social">
-                                    <a href="#" target="_blank" class="footer-menu_link w-inline-block">
+                                    <a href="https://www.facebook.com/104473525044440" target="_blank" class="footer-menu_link w-inline-block">
                                         <div class="footer-social_icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 16"
                                                 fill="none" vector-effect="non-scaling-stroke"
@@ -3138,7 +3386,7 @@
                                         </div>
                                         <div>LinkedIn</div>
                                     </a>
-                                    <a href="#" target="_blank" class="footer-menu_link w-inline-block">
+                                    <a href="https://instagram.com/dr.anubhutig" target="_blank" class="footer-menu_link w-inline-block">
                                         <div class="footer-social_icon">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 16 16"
                                                 fill="none" vector-effect="non-scaling-stroke"

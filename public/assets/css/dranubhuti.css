@@ -3744,12 +3744,12 @@ figure {
 
 .footer_brand {
   width: var(--_max-width---max-width--100);
-  max-width: 140px;
+  max-width: 340px;
 }
 
 .footer-contact_wrap {
   grid-column-gap: var(--_size-variables---element-spacing--xl);
-  grid-row-gap: var(--_size-variables---element-spacing--xl);
+  grid-row-gap: 8px;
   flex-flow: column;
   justify-content: flex-start;
   align-items: flex-end;
@@ -3757,10 +3757,10 @@ figure {
 }
 
 .footer-contact_link {
-  font-size: var(--_font---font-size-semantics--h5);
-  line-height: var(--_font---line-height--120);
+  font-size: clamp(16px, 1.25vw, 20px);
+  line-height: 1.3;
   font-weight: var(--_font---font-weight--500);
-  letter-spacing: var(--_font---letter-spacing--2px);
+  letter-spacing: 0.5px;
   transition: text-underline-offset .35s;
 }
 

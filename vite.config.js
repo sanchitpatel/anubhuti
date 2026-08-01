@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     open: true,
     host: true,
-    allowedHosts: ["relief-chester-jaguar-leaving.trycloudflare.com"],
+    allowedHosts: ["hollow-into-did-amazing.trycloudflare.com"],
   },
   build: {
     rollupOptions: {
