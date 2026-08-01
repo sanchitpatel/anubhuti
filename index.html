@@ -589,6 +589,16 @@
             letter-spacing: 0.5px !important;
         }
 
+        .home-blog_header {
+            display: block !important;
+            text-align: center !important;
+        }
+
+        .home-blog_button {
+            display: flex !important;
+            justify-content: center !important;
+        }
+
         /* ==========================================================================
            Services Section Responsive Optimization for 15.6" Laptop Displays & Desktops
            Ensures all 4 service templates fit completely within viewport height & width
@@ -602,7 +612,8 @@
             }
 
             .section_team .section-padding,
-            .section_story .section-padding {
+            .section_story .section-padding,
+            .section_blog .section-padding {
                 padding-top: 60px !important;
                 padding-bottom: 80px !important;
             }
@@ -651,8 +662,10 @@
 
             .our-story_header h2,
             .home-service_header-content h2,
-            .testimonial_header h2 {
-                font-size: clamp(32px, 3vw, 48px) !important;
+            .testimonial_header h2,
+            .home-blog_header h2,
+            .section_blog h2 {
+                font-size: clamp(28px, 4vw, 44px) !important;
                 font-weight: 500 !important;
                 line-height: 1.15 !important;
                 letter-spacing: -0.5px !important;
@@ -936,6 +949,119 @@
             .our-story_item-title {
                 font-size: 20px !important;
                 line-height: 1.35 !important;
+            }
+        }
+
+        /* Blog Section Mobile Track & Horizontal Alignment (< 767px) */
+        @media screen and (max-width: 767px) {
+            /* Bypass Webflow IX2 vertical scroll trigger delay on mobile blog cards */
+            .section_blog [data-w-id],
+            .blog_element,
+            .blog_list,
+            .blog_list .w-dyn-item,
+            .blog_item,
+            .blog-item_image-wrap,
+            .blog-item_image,
+            .blog-content_wrap,
+            .blog-item_title {
+                opacity: 1 !important;
+                visibility: visible !important;
+                transform: none !important;
+                -webkit-transform: none !important;
+            }
+
+            /* Dark card image background fallback to eliminate white flash */
+            .blog_item,
+            .blog-item_image-wrap {
+                background-color: #121212 !important;
+            }
+
+            .blog_element {
+                width: 100% !important;
+                overflow-x: visible !important;
+                overflow-y: hidden !important;
+                touch-action: pan-x pan-y !important;
+            }
+
+            .blog_list {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                overflow-y: hidden !important;
+                touch-action: pan-x pan-y !important;
+                scroll-snap-type: x mandatory !important;
+                -webkit-overflow-scrolling: touch !important;
+                gap: 16px !important;
+                padding-left: 0 !important;
+                padding-right: 24px !important;
+                padding-bottom: 8px !important;
+                scroll-padding-right: 24px !important;
+                scrollbar-width: none !important;
+                -ms-overflow-style: none !important;
+            }
+
+            .blog_list::-webkit-scrollbar {
+                display: none !important;
+            }
+
+            .blog_list .w-dyn-item {
+                flex: 0 0 280px !important;
+                width: 280px !important;
+                min-width: 280px !important;
+                max-width: 280px !important;
+                scroll-snap-align: start !important;
+                touch-action: pan-x pan-y !important;
+            }
+
+            .blog_item {
+                width: 100% !important;
+                height: 380px !important;
+                min-height: 380px !important;
+                max-height: 380px !important;
+                border-radius: 18px !important;
+                overflow: hidden !important;
+                position: relative !important;
+            }
+
+            .blog-item_image-wrap {
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden !important;
+            }
+
+            .blog-item_image {
+                display: block !important;
+                width: 100% !important;
+                height: 100% !important;
+                object-fit: cover !important;
+                object-position: center !important;
+                filter: none !important;
+            }
+
+            .blog-content_wrap {
+                padding: 20px 18px !important;
+                background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 20%, rgba(0, 0, 0, 0.85) 100%) !important;
+            }
+
+            .blog-item_title {
+                font-size: 16px !important;
+                line-height: 1.35 !important;
+                display: -webkit-box !important;
+                -webkit-line-clamp: 3 !important;
+                -webkit-box-orient: vertical !important;
+                overflow: hidden !important;
+            }
+
+            .blog-item_cta {
+                font-size: 13px !important;
+            }
+
+            .blog-item_icon-wrap {
+                width: 28px !important;
+                height: 28px !important;
             }
         }
     </style>
@@ -3140,62 +3266,28 @@
                 <div class="section-padding padding-120x120">
                     <div class="container">
                         <div class="margin-bottom margin-56px">
-                            <div class="home-blog_header">
-                                <div class="home-blog_header-content">
-                                    <div data-w-id="9a207a8e-e9ed-e4b1-3128-0d89337d9663"
-                                        style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                                        class="margin-bottom margin-12px">
-                                        <div class="section_tag">
-                                            <div class="icon_wrap is-small">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12"
-                                                    fill="none" vector-effect="non-scaling-stroke"
-                                                    preserveAspectRatio="none">
-                                                    <path
-                                                        d="M12 5.45455H7.31455L10.6255 2.14364L9.85636 1.37455L6.54545 4.68545V0H5.45455V4.68545L2.14364 1.37455L1.37455 2.14364L4.68545 5.45455H0V6.54545H4.68545L1.37455 9.85636L2.14364 10.6255L5.45455 7.31455V12H6.54545V7.31455L9.85636 10.6255L10.6255 9.85636L7.31455 6.54545H12V5.45455Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </div>
-                                            <div>Blogs</div>
-                                        </div>
-                                    </div>
-                                    <h2 data-w-id="9a207a8e-e9ed-e4b1-3128-0d89337d9667"
-                                        style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
-                                        Stories and Tips From <span class="text-highlighted">Around the World</span>
-                                    </h2>
-                                </div>
-                                <div id="w-node-_9a207a8e-e9ed-e4b1-3128-0d89337d966d-965ec33c"
-                                    data-w-id="9a207a8e-e9ed-e4b1-3128-0d89337d966d"
+                            <div class="home-blog_header content-align-center">
+                                <div data-w-id="9a207a8e-e9ed-e4b1-3128-0d89337d9663"
                                     style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-                                    class="home-blog_header-button">
-                                    <a data-wf--button-primary--variant="base" href="blog.html"
-                                        class="button_primary w-inline-block">
-                                        <div class="button_inner">
-                                            <div class="button-text_wrap">
-                                                <div class="button_text">See All Blogs</div>
-                                            </div>
-                                            <div class="button-icon_group">
-                                                <div class="button-icon_wrap">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                                        viewBox="0 0 12 12" fill="none"
-                                                        vector-effect="non-scaling-stroke" preserveAspectRatio="none">
-                                                        <path
-                                                            d="M4.70139 0.75L10.5303 0.750201L10.5303 6.55165M0.530334 10.75L10.2896 0.990932"
-                                                            stroke="currentColor" stroke-width="1.5"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="button-icon_wrap is-hover">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="100%"
-                                                        viewBox="0 0 12 12" fill="none"
-                                                        vector-effect="non-scaling-stroke" preserveAspectRatio="none">
-                                                        <path
-                                                            d="M4.70139 0.75L10.5303 0.750201L10.5303 6.55165M0.530334 10.75L10.2896 0.990932"
-                                                            stroke="currentColor" stroke-width="1.5"></path>
-                                                    </svg>
-                                                </div>
-                                            </div>
+                                    class="margin-bottom margin-12px">
+                                    <div class="section_tag">
+                                        <div class="icon_wrap is-small">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 12 12"
+                                                fill="none" vector-effect="non-scaling-stroke"
+                                                preserveAspectRatio="none">
+                                                <path
+                                                    d="M12 5.45455H7.31455L10.6255 2.14364L9.85636 1.37455L6.54545 4.68545V0H5.45455V4.68545L2.14364 1.37455L1.37455 2.14364L4.68545 5.45455H0V6.54545H4.68545L1.37455 9.85636L2.14364 10.6255L5.45455 7.31455V12H6.54545V7.31455L9.85636 10.6255L10.6255 9.85636L7.31455 6.54545H12V5.45455Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
                                         </div>
-                                    </a>
+                                        <div>Blogs</div>
+                                    </div>
                                 </div>
+                                <h2 data-w-id="9a207a8e-e9ed-e4b1-3128-0d89337d9667"
+                                    style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
+                                    Stories and Tips From <br />
+                                    <span class="text-highlighted">Around the World</span>
+                                </h2>
                             </div>
                         </div>
                         <div class="blog_element">
@@ -3225,7 +3317,7 @@
                                                 </div>
                                             </div>
                                             <div class="blog-item_image-wrap">
-                                                <img src="assets/img/gen_blog-image-6.jpg" loading="lazy" alt=""
+                                                <img src="assets/img/gen_blog-image-6.jpg" loading="eager" alt=""
                                                     sizes="100vw"
                                                     srcset="assets/img/gen_blog-image-6.jpg 500w, assets/img/gen_blog-image-6.jpg 800w, assets/img/gen_blog-image-6.jpg 1080w, assets/img/gen_blog-image-6.jpg 1600w, assets/img/gen_blog-image-6.jpg 1620w"
                                                     class="blog-item_image" />
@@ -3256,7 +3348,7 @@
                                                 </div>
                                             </div>
                                             <div class="blog-item_image-wrap">
-                                                <img src="assets/img/gen_blog-image-5.jpg" loading="lazy" alt=""
+                                                <img src="assets/img/gen_blog-image-5.jpg" loading="eager" alt=""
                                                     sizes="100vw"
                                                     srcset="assets/img/gen_blog-image-5.jpg 500w, assets/img/gen_blog-image-5.jpg 800w, assets/img/gen_blog-image-5.jpg 1080w, assets/img/gen_blog-image-5.jpg 1600w, assets/img/gen_blog-image-5.jpg 1620w"
                                                     class="blog-item_image" />
@@ -3287,7 +3379,7 @@
                                                 </div>
                                             </div>
                                             <div class="blog-item_image-wrap">
-                                                <img src="assets/img/gen_blog-image-4.jpg" loading="lazy" alt=""
+                                                <img src="assets/img/gen_blog-image-4.jpg" loading="eager" alt=""
                                                     sizes="100vw"
                                                     srcset="assets/img/gen_blog-image-4.jpg 500w, assets/img/gen_blog-image-4.jpg 800w, assets/img/gen_blog-image-4.jpg 1080w, assets/img/gen_blog-image-4.jpg 1600w, assets/img/gen_blog-image-4.jpg 1620w"
                                                     class="blog-item_image" />
