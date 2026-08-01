@@ -497,6 +497,10 @@
                 margin-top: 80px !important;
             }
 
+            .section_team .button-container {
+                margin-top: 24px !important;
+            }
+
             .lead-form_card {
                 margin-left: auto !important;
                 margin-right: auto !important;
@@ -592,29 +596,71 @@
            ========================================================================== */
         @media screen and (min-width: 768px) {
 
-            /* Sticky camera alignment - vertically centers section in viewport */
-            .service_sticky-camera {
-                top: max(15px, calc((100vh - 560px) / 2)) !important;
-                justify-content: center !important;
+            /* Compact section bottom padding & sticky scroll height on desktop */
+            .section_service .section-padding {
+                padding-bottom: 100px !important;
             }
 
-            /* Compact margin above header inside services sticky camera */
+            .section_service .service_sticky-trigger {
+                height: 200vh !important;
+            }
+
+            /* Sticky camera alignment - pins higher near top of viewport below navbar */
+            .service_sticky-camera {
+                top: 45px !important;
+                justify-content: flex-start !important;
+            }
+
+            /* Compact margins inside services header */
             .service_sticky-camera .margin-bottom.margin-56px {
-                margin-bottom: 24px !important;
+                margin-bottom: 12px !important;
+            }
+
+            .home-service_header-content .margin-bottom.margin-12px {
+                margin-bottom: 6px !important;
+            }
+
+            .home-service_header-content .margin-bottom.margin-16px {
+                margin-bottom: 8px !important;
             }
 
             .home-service_header {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100% !important;
                 margin-bottom: 0 !important;
             }
 
+            .home-service_header-content {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                max-width: 780px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
             .home-service_header-content h2 {
-                font-size: clamp(26px, 2.3vw, 36px) !important;
-                line-height: 1.25 !important;
+                font-size: clamp(32px, 3vw, 48px) !important;
+                font-weight: 500 !important;
+                line-height: 1.15 !important;
+                letter-spacing: -0.5px !important;
             }
 
             .home-service_header-content p {
                 font-size: 15px !important;
                 line-height: 1.4 !important;
+            }
+
+            .home-service_button {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+                margin-top: 8px !important;
             }
 
             /* Horizontal Card Track & Item Wrapper Width */
@@ -696,10 +742,10 @@
                 height: 250vh !important;
             }
 
-            /* Sticky camera alignment for mobile - keeps Header + Cards fixed together like Image 1 */
+            /* Sticky camera alignment for mobile - keeps Header + Cards fixed together below navbar */
             .service_sticky-camera {
                 position: sticky !important;
-                top: max(10px, calc((100vh - 580px) / 2)) !important;
+                top: 65px !important;
                 height: auto !important;
             }
 
@@ -720,18 +766,40 @@
             }
 
             .home-service_header {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100% !important;
                 margin-bottom: 0 !important;
             }
 
+            .home-service_header-content {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+
             .home-service_header-content h2 {
-                font-size: 20px !important;
-                line-height: 1.25 !important;
+                font-size: clamp(24px, 6vw, 32px) !important;
+                line-height: 1.2 !important;
                 margin-bottom: 4px !important;
             }
 
             .home-service_header-content p {
                 font-size: 12.5px !important;
                 line-height: 1.35 !important;
+            }
+
+            .home-service_button {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+                width: 100% !important;
+                margin-top: 10px !important;
+                margin-bottom: 8px !important;
             }
 
             .home-service_button .button_primary {
@@ -808,14 +876,38 @@
                 grid-row-gap: 6px !important;
             }
 
-            .service-item_tag {
-                padding: 5px 10px !important;
-                font-size: 11px !important;
-            }
-
             .service-tag_icon {
                 width: 12px !important;
                 height: 12px !important;
+            }
+
+            /* Our Story Mobile Alignment & Title Font Size */
+            .our-story_item-header {
+                min-height: 38px !important;
+                align-items: center !important;
+            }
+
+            .our-story_item-title {
+                font-size: 15px !important;
+                line-height: 1.35 !important;
+            }
+        }
+
+        /* Hide percentage / stat numbers from Our Story cards */
+        .our-story_item-info_number {
+            display: none !important;
+        }
+
+        /* Desktop: Align break lines & equalize title text size in Our Story cards */
+        @media screen and (min-width: 768px) {
+            .our-story_item-header {
+                min-height: 44px !important;
+                align-items: center !important;
+            }
+
+            .our-story_item-title {
+                font-size: 20px !important;
+                line-height: 1.35 !important;
             }
         }
     </style>
@@ -1273,8 +1365,8 @@
                                     </div>
                                     <h2 text-split="" data-w-id="89d2c27f-ce49-39b1-4d32-4b51356a9834"
                                         style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
-                                        Redefining Dental Care with Trust, Innovation in <span
-                                            class="text-highlighted">Dental Wellness</span>
+                                        Redefining Dental Care with
+                                        <span class="text-highlighted">Trust & Innovation</span>
                                     </h2>
                                 </div>
                             </div>
@@ -1622,7 +1714,7 @@
                             <div class="service_sticky-camera">
                                 <div class="margin-bottom margin-56px">
                                     <div class="home-service_header">
-                                        <div class="home-service_header-content">
+                                        <div class="home-service_header-content content-align-center">
                                             <div data-w-id="62f3134b-0a64-f0b4-9c52-b0a14947355a"
                                                 style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
                                                 class="margin-bottom margin-12px">
@@ -1643,7 +1735,8 @@
                                             <div class="margin-bottom margin-16px">
                                                 <h2 data-w-id="e7b05ae6-acb7-e587-0efc-41d9940f7862"
                                                     style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
-                                                    Comprehensive Dental Care for <span class="text-highlighted">Every
+                                                    Comprehensive Dental&nbsp;Care for <span
+                                                        class="text-highlighted">Every
                                                         Smile</span>
                                                 </h2>
                                             </div>
@@ -2718,8 +2811,8 @@
                                     </div>
                                     <h2 text-split="" data-w-id="89d2c27f-ce49-39b1-4d32-4b51356a9834"
                                         style="-webkit-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 25%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0">
-                                        Redefining Dental Care with Trust, Innovation in <span
-                                            class="text-highlighted">Dental Wellness</span>
+                                        Redefining Dental Care with
+                                        <span class="text-highlighted">Trust & Innovation</span>
                                     </h2>
                                 </div>
                             </div>
