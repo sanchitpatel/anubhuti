@@ -591,6 +591,84 @@
             }
         }
 
+        .map_grid_container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            align-items: stretch;
+        }
+
+        @media screen and (min-width: 768px) {
+            .map_grid_container {
+                grid-template-columns: 340px 1fr;
+                gap: 32px;
+            }
+        }
+
+        .map_qr_card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 28px 24px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .map_qr_badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(36, 163, 177, 0.1);
+            color: #24a3b1;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .map_qr_title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #111111;
+            margin-bottom: 6px;
+        }
+
+        .map_qr_subtext {
+            font-size: 14px;
+            line-height: 1.4;
+            color: #666666;
+            margin-bottom: 18px;
+        }
+
+        .map_qr_img_wrap {
+            background: #ffffff;
+            padding: 12px;
+            border-radius: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .map_qr_code {
+            width: 170px;
+            height: 170px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .map_wrapper {
+            width: 100%;
+            min-height: 420px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
         .footer_brand {
             max-width: 340px !important;
         }
@@ -3469,17 +3547,44 @@
                                 Find Our <span class="text-highlighted">Clinic</span>
                             </h2>
                         </div>
-                        <div class="map_wrapper" style="width: 100%; height: 420px; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08); border: 1px solid rgba(0, 0, 0, 0.08);">
-                            <iframe 
-                                title="Dr. Anubhuti's Advanced Dental Care Location"
-                                src="https://maps.google.com/maps?q=Dr.+Anubhuti+Advanced+Dental+Care&t=&z=15&ie=UTF8&iwloc=&output=embed" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
+                        <div class="map_grid_container">
+                            <!-- Left Column: QR Code Card -->
+                            <div class="map_qr_card">
+                                <div class="map_qr_badge">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <rect x="3" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="3" width="7" height="7"></rect>
+                                        <rect x="14" y="14" width="7" height="7"></rect>
+                                        <rect x="3" y="14" width="7" height="7"></rect>
+                                    </svg>
+                                    <span>Scan for Directions</span>
+                                </div>
+                                <h3 class="map_qr_title">Instant Navigation</h3>
+                                <p class="map_qr_subtext">Scan this QR code with your mobile camera to open exact GPS directions in Google Maps.</p>
+                                <div class="map_qr_img_wrap">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=https%3A%2F%2Fmaps.google.com%2F%3Fq%3DDr.%2BAnubhuti%2BAdvanced%2BDental%2BCare" alt="Scan for Google Maps Directions" class="map_qr_code" />
+                                </div>
+                                <a href="https://maps.google.com/?q=Dr.+Anubhuti+Advanced+Dental+Care" target="_blank" rel="noopener" class="button_primary w-inline-block" style="width: 100%; text-align: center; justify-content: center; margin-top: 16px;">
+                                    <div class="button_inner" style="justify-content: center;">
+                                        <div class="button-text_wrap">
+                                            <div class="button_text">Open in Google Maps</div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <!-- Right Column: Interactive Map -->
+                            <div class="map_wrapper">
+                                <iframe 
+                                    title="Dr. Anubhuti's Advanced Dental Care Location"
+                                    src="https://maps.google.com/maps?q=Dr.+Anubhuti+Advanced+Dental+Care&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                                    width="100%" 
+                                    height="100%" 
+                                    style="border:0;" 
+                                    allowfullscreen="" 
+                                    loading="lazy" 
+                                    referrerpolicy="no-referrer-when-downgrade">
+                                </iframe>
+                            </div>
                         </div>
                     </div>
                 </div>
