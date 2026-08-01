@@ -573,6 +573,22 @@
             .our-info_item.is-expanded .our-info_arrow {
                 transform: rotate(-90deg) !important;
             }
+
+            .faq-info_content {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .faq-header_title {
+                font-size: 17px !important;
+                line-height: 1.35 !important;
+                font-weight: 600 !important;
+                letter-spacing: -0.2px !important;
+            }
         }
 
         .footer_brand {
@@ -597,6 +613,19 @@
         .home-blog_button {
             display: flex !important;
             justify-content: center !important;
+        }
+
+        /* Unified section heading clamp rule across all viewports (mobile: 28px, desktop: 44px) */
+        .our-story_header h2,
+        .home-service_header-content h2,
+        .testimonial_header h2,
+        .home-blog_header h2,
+        .faq-info_content h2,
+        .section_faq h2 {
+            font-size: clamp(28px, 4vw, 44px) !important;
+            font-weight: 500 !important;
+            line-height: 1.15 !important;
+            letter-spacing: -0.5px !important;
         }
 
         /* ==========================================================================
@@ -660,15 +689,11 @@
                 margin-right: auto !important;
             }
 
-            .our-story_header h2,
-            .home-service_header-content h2,
-            .testimonial_header h2,
-            .home-blog_header h2,
-            .section_blog h2 {
-                font-size: clamp(28px, 4vw, 44px) !important;
+            .blog-item_title {
+                font-size: 20px !important;
+                line-height: 1.35 !important;
                 font-weight: 500 !important;
-                line-height: 1.15 !important;
-                letter-spacing: -0.5px !important;
+                letter-spacing: -0.2px !important;
             }
 
             .home-service_header-content p {
@@ -954,6 +979,7 @@
 
         /* Blog Section Mobile Track & Horizontal Alignment (< 767px) */
         @media screen and (max-width: 767px) {
+
             /* Bypass Webflow IX2 vertical scroll trigger delay on mobile blog cards */
             .section_blog [data-w-id],
             .blog_element,
